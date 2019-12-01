@@ -1,20 +1,77 @@
- #include <stdio.h>
-#include"myMath.h"
+#include <stdio.h>
+#include "myBank.h"
+
 int main(){
-double x=1;
-int xx=1;
-double answer=0;
-do{
- printf("enter a double number");
-}
-while (scanf("%le",&x)!=1);
+int status=0;
+char option;
 
-xx=(int)x;
+printf("Hey there! welcome to shaharivka's bank. Here are your following options:\n");
+printf("O-opens a new bank account\n");
+printf("B-Balance inquiry\n");
+printf("D-deposite money in to an account\n");
+printf("C-close an account\n");
+printf("I-adding interest\n");
+printf("P-prints all open accounts\n");
+printf("E-closing all acoount and shut down the program\n");
+while(status==0){
+   printf("enter your request:\n");
+   if(scanf(" %c",&option)!=1){
+    printf("ERROR!,this is more then one letter, please enter again\n"); 
+   }
+   else{
+    
 
-answer= sub(add(Exp(xx),Pow(x,3)),2);
-printf("The value of f1(x) = e^x+x^3-2 at the point %0.4f is %0.4f\n",x,answer);
-answer=add(mul(x,3),mul(Pow(x,2),2));
-printf("The value of f2(x) = 3x+2x^2 at the point %0.4f is %0.4f\n",x,answer);
-answer=sub(div(mul(Pow(x,3),4),5),mul(x,2));
-printf("The value of f3(x) = (4x^3)/5-2x at the point %0.4f is %0.4f\n",x,answer);
+    switch(option){
+        
+        case 'O':
+         o(); 
+        break;
+
+        case 'B':
+         b();
+        break;
+        
+        case 'D':
+         d();
+        break;
+
+        case 'W':
+         w();
+        break;
+      
+
+        case 'C':
+         c();
+        break;
+
+        case 'I':
+         i();
+        break;
+
+        case 'P':
+         p();
+         break;
+
+        case 'E':
+         e();
+         status=1;
+        break;
+
+         default:
+         printf("ERROR!,this is not one of the options, please enter again\n");
+         
+         break;
+
+        
+
+        
+    }
+
+
+    }
 }
+    return 0;
+
+
+    }
+    
